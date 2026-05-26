@@ -1,0 +1,31 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Local virtual environments
+.venv/
+venv/
+env/
+Conda/
+py3119/
+
+# Python execution temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Old local development database (SQLite)
+*.sqlite3
+db.sqlite3
+
+# Hidden operating system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db

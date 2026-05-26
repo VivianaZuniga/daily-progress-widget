@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # --- CONTENEDOR 1: LA BASE DE DATOS ---
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=progress_db
+      - POSTGRES_USER=vivi_user
+      - POSTGRES_PASSWORD=mi_password_secreto
+    ports:
+      - "5432:5432"
+
+  # --- CONTENEDOR 2: EL BACKEND DE DJANGO ---
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=progress_db
+      - DB_USER=vivi_user
+      - DB_PASSWORD=mi_password_secreto
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
