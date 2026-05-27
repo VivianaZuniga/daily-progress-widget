@@ -252,7 +252,7 @@ class ProgressWidget(QWidget):
                 name = reg.get('activity_name', 'Activity')
                 completed = reg.get('complete', False)
 
-                icon = "T" if completed else "F"
+                icon = "(✓)" if completed else "(✖)"
                 text_color = "#a6e3a1" if completed else "#f38ba8"
 
                 lbl_task = QLabel(f"{icon} {name}")
