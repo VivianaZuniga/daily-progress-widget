@@ -8,6 +8,6 @@ router.register(r'records', DailyLogViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('resumen/', ProgressAPIView.as_view(), name='progress_summary'),
-    path('heat-map/', HeatMapCalendarAPIView.as_view(), name='heat_map'),
+    path('resumen/', ProgressAPIView.as_view(), name='progresssummary'),
+    path('heat_map/', HeatMapCalendarAPIView.as_view(), name='heatmap'),
 ]
